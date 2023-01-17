@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width = device-width,initial-scale = 1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>  
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row-container {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .row {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .imgbox {
+            border: 1px solid #ededed;
+            box-shadow: 0 1px 5px 0 rgb(0 0 0 / 10%);
+        }
+
+        .imgbox1 {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .col-md-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 0px 50px 0px;
+        }
+
+        .p1 {
+            line-height: 1.9;
+            font-family: Open Sans, Helvetica, Arial, sans-serif;
+            color: #919daa;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .btn1 {
+            background-color: #30b9e6;
+            transition-duration: 0.3s;
+        }
+
+        .btn1:hover {
+            background-color: black;
+        }
+
+        .icon {
+            width: 26px;
+            float: left;
+            text-align: center;
+        }
+
+        .reqbtn {
+            background-color: #30b9e6;
+            transition-duration: 0.3s;
+        }
+
+        .reqbtn:hover {
+            background-color: #79cfec;
+        }
+
+        .imgbox:hover .hide11 {
+            /* height: 0px; */
+            /* opacity: 1; */
+            animation: hover_animation 100s;
+        }
+
+        .imgbox .hide11 {
+            animation: out_animation 100s;
+        }
+
+        .imgbox:hover .show11 {
+            /* height: 0px; */
+            /* opacity: 1; */
+            animation: btn_show_animation 150s;
+        }
+
+        .imgbox .show11 {
+            animation: btn_hide_animation 100s;
+        }
+        .imgbox:hover img{
+            animation: mini_img_animation 100s;
+        }
+        .imgbox img{
+            animation: maxi_img_animation 100s;
+        }
+
+        @keyframes hover_animation {
+            0% {
+                opacity: 1;
+                /* height: 140px; */
+            }
+
+            /*DEFAULT VALUE*/
+            0.3% {
+                opacity: 0;
+                height: 0px;
+            }
+
+            100% {
+                opacity: 0;
+                height: 0px;
+            }
+
+            /*CHANGING VALUE*/
+        }
+
+        @keyframes out_animation {
+            0% {
+                opacity: 0;
+                height: 0px;
+                /* height: 140px; */
+            }
+
+            /*DEFAULT VALUE*/
+            0.3% {
+                opacity: 1;
+                height: 124px;
+            }
+
+            100% {
+                opacity: 1;
+                height: 124px;
+            }
+
+            /*CHANGING VALUE*/
+        }
+
+        @keyframes btn_show_animation {
+            0% {
+                opacity: 0;
+                /* height: 140px; */
+            }
+
+            /*DEFAULT VALUE*/
+            0.7% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+
+            /*CHANGING VALUE*/
+        }
+
+        @keyframes mini_img_animation {
+            0% {
+                -webkit-transform: scale(1.05);
+                /* height: 140px; */
+            }
+
+            /*DEFAULT VALUE*/
+            0.5% {
+                -webkit-transform: scale(1);
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+            }
+
+            /*CHANGING VALUE*/
+        }
+        @keyframes maxi_img_animation {
+            0% {
+                -webkit-transform: scale(1);
+                /* height: 140px; */
+            }
+
+            /*DEFAULT VALUE*/
+            0.3% {
+                -webkit-transform: scale(1.05);
+            }
+
+            100% {
+                -webkit-transform: scale(1.05);
+            }
+
+            /*CHANGING VALUE*/
+        }
+
+        .imgbox1:hover .hide11 {
+            animation: hover_animation 100s;
+        }
+
+        .imgbox1 .hide11 {
+            animation: out_animation 100s;
+        }
+
+        .imgbox1:hover .show11 {
+            animation: btn_show_animation 150s;
+        }
+
+        .imgbox1 .show11 {
+            animation: btn_hide_animation 100s;
+        }
+        .imgbox1:hover img{
+            animation: mini_img_animation 100s;
+        }
+        .imgbox1 img{
+            animation: maxi_img_animation 100s;
+        }
+        .nav-link{
+            font-size: 13px;
+            color: black;
+            font-weight: 800; 
+            font-family: Open Sans, Helvetica, Arial, sans-serif;
+        }
+        .nav-item{
+            padding: 0px 10px; 
+        }
+        .offcanvas{
+            transition: transform 0.3s;
+        }
+        .list-group-item{
+            color: #919daa;
+            border: none;
+            padding-bottom: 15px;
+        }
+        #btn_top {
+            visibility: hidden;
+            position: fixed;
+             bottom: 0px;
+             right: 30px;
+             z-index: 99;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        #btn_top:hover{
+            filter: invert(62%) sepia(14%) saturate(2794%) hue-rotate(158deg) brightness(103%) contrast(80%);
+        }
+        @media only screen and (max-width: 768px) {
+           #col-md-6{
+                 text-align: center;
+            }
+            .col-md-6{
+                text-align: center;
+            }
+            #black-container{
+                height: 126px;
+            }
+        }
+        @media only screen and (min-width: 768px) {
+           #col-md-6{
+                 text-align: right;
+            }
+            #black-container{
+                height: 66px;
+            }
+        }
+        @media only screen and (max-width: 1200px) {
+            #navbar-button{
+                display: flex;
+
+            }
+        }
+        @media only screen and (min-width: 1200px) {
+            #navbar-button{
+                display: none;
+
+            }
+        }
+        @media only screen and (max-width: 1200px) {
+            #sharkimg{
+                width: 180px;
+                height: 90%;
+            }
+        }
+        @media only screen and (min-width: 1200px) {
+            #sharkimg{
+                width: 200px;
+                height: 100%;
+            }
+        }
+
+        #navbar-button{
+            font-size: 18px;
+            background-color: white;
+            border: none;
+        }
+        .nav-item{
+            text-align: center;
+        }
+        #content{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .list-group{
+            padding-top: 20px;
+        }
+        .list-menu{
+            opacity: 0;
+            position: absolute;
+            text-align: left;
+            padding-top: 10px;
+            width: 210px;
+            top: 36px;
+        }
+        .nav-link{
+            background-color: white;
+        }
+        .nav-item:hover .nav-link{
+            color: #30b9e6;
+        }
+        .nav-item:hover div{
+            animation: nav_item_animation 150s;
+        }
+        @keyframes nav_item_animation {
+            0% {
+                opacity: 0;
+                top: 36px;
+                /* height: 140px; */
+            }
+
+            /*DEFAULT VALUE*/
+            0.2% {
+                opacity: 1;
+                top: 46px;
+            }
+            100% {
+                opacity: 1;
+                top: 46px;
+            }
+            /*CHANGING VALUE*/
+        }
+
+        .list-group-item-action1:hover{
+            background-color: #30b9e6;
+            cursor: pointer;
+        }
+        .list-group-item-action1{
+            transition-duration: 0.3s;
+        }
+        .btn_top_show{
+           animation: btn_top_show_animation 200s;
+        }
+        @keyframes btn_top_show_animation {
+            0% {
+                transform: translateY(0px);
+           
+                /* height: 140px; */
+            }
+
+            /*DEFAULT VALUE*/
+            0.2% {
+                transform: translateY(-20px);
+             
+            }
+            100% {
+               transform: translateY(-20px);
+               
+            }
+            /*CHANGING VALUE*/
+        }
+    </style>
+</head>
+
+<body id = "body" style = "overflow: scroll;">
+
+    <div class="container-fluid" style="margin-left: 0px; margin-right: 0px; padding: 0px; pointer-events: none;">
+
+        <!--Main Content-->
+        <div id = "content" style="width: 100%; margin: 0px; padding: 0px; background-color: white; pointer-events: all; position: relative; z-index: 1;" onclick="showContent()">
+            <div style="background-color: #454545; ">
+                <div style="display: flex; justify-content: center; ">
+                    <div class="top-bar" style="height: 40px; padding: 0px 15px; display: flex; align-items: center;">
+                        <div class="icon-wrapper" style="display:inline;">
+                            <div class="icon">
+                                <img src="icons/icons8-facebook-f.svg"
+                                    style="width: 20px; height: 20px; filter: invert(0.6);">
+                            </div>
+                            <div class="icon">
+                                <img src="icons/instagram.svg" style="width: 20px; height: 20px; filter: invert(0.6);">
+                            </div>
+                            <div class="icon">
+                                <img src="icons/icons8-yelp.svg" style="width: 20px; height: 20px; filter: invert(0.6);">
+                            </div>
+                            <div class="icon">
+                                <img src="icons/tripadvisor.svg" style="width: 20px; height: 20px; filter: invert(0.6);">
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                
+            </div>
+            
+            <!--navbar-->
+               
+            <nav class="navbar navbar-expand-xl bg-white" style="position: sticky; top: 0px; z-index: 5;">
+                <div class="container-fluid" style = "max-width: 1200px; width: 100%;">
+                    <div style="height: 40px; width: 35%; text-align: left;">
+                        <div id = "sharkimg"style="background-image: url(https://www.sharkdiver.com/wp-content/uploads/2022/04/SharkDiver-Nautilus-2022.png);
+                                   background-position: center center;
+                                  background-repeat: no-repeat;
+                                  background-size: cover;">
+                        </div>0
+                    </div>
+                  <button id = "navbar-button" class="navbar-button" type="button"  onclick="transform_content(event)">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" style="justify-content: center;">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" style = "color: #30b9e6;">SHARK DIVER HOME</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                        <div class="list-group list-group-flush list-menu">
+                            <a class="list-group-item list-group-item-action1">OUR COMPANY</a>
+                            <a class="list-group-item list-group-item-action1">SHARK CONVERSATION</a>
+                            <a class="list-group-item list-group-item-action1">REVIEWS</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">ADVENTURES</a>
+                        <div class="list-group list-group-flush list-menu">
+                            <a class="list-group-item list-group-item-action1">GUADALUPE ISLAND GREAT WHITE SHARKS</a>
+                            <a class="list-group-item list-group-item-action1">SAN IGNACIO LAGOON GRAY WHALES</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">MEDIA</a>
+                        <div class="list-group list-group-flush list-menu">
+                            <a class="list-group-item list-group-item-action1">FILM CREWS</a>
+                            <a class="list-group-item list-group-item-action1">SHARK DIVER TV</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">BLOG</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT US</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            <!----------->
+
+            <div style="height: 400px;">
+                <video width="100%" height="400px" autoplay muted loop style="object-fit: cover;">
+                     <source src="shark.mp4" type="video/mp4">
+                </video>
+            </div>
+
+
+            <div id = "black-container" style="background-color: #202020; ">
+                <div class="row-container">
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <div style="display: block; color: white; margin: 0px;">
+                                <p style="margin-top: 10px; margin-left: 2px;  height: 36px;">
+                                    <span style="font-size: 12px;">CALL:</span>
+                                    <span style="font-size: 15px; font-weight: bold;">855.987.4275</span>
+                                    <span style="font-size: 12px;">or</span>
+                                    <span style="font-size: 15px; font-weight: bold;">619.887.4275</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div id = "col-md-6" class="col-md-6" style="margin-top: 10px;">
+                            <button
+                                style="font-size: 11px; font-weight: 700; background-color: white; color: #36353C; padding: 0px 15px 0px 15px; border-radius: 5px; height: 34px; font-family: Open Sans;">
+                                EMAIL: CREW@SHARKDIVER.COM
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+            </div>
+    
+            <div style="margin: 55px;">
+                <div class="text" style="text-align: center; ">
+                    <h3
+                        style="margin-bottom: 0px; font-style: normal; color: #4e6278; font-size: 32px; font-weight: 800; font-family: Open Sans, Helvetica, Arial, sans-serif; letter-spacing: .05em; line-height: 1.2; ">
+                        WELCOME TO THE ADVENTURE OF A LIFETIME</h3>
+                    <div style="display: flex; justify-content: center; height: 10px; margin: 0px;">
+                        <hr style="size: 2px; width: 100%; max-width: 60px; margin-top: 10px; ">
+                    </div>
+                </div>
+                <div class="text" style="text-align: center; text-transform: uppercase; padding-top: 20px;">
+                    <p
+                        style="color: #4e6278;  font-size: 14px; font-family: Open Sans, Helvetica, Arial, sans-serif; letter-spacing: .3em; font-weight: 600;">
+                        Get Up Close and Personal with Sharks in their Natural Habitat!</p>
+                </div>
+            </div>
+            <!--images--->
+            <div class="row-container" style="padding-bottom: 30px;">
+                <div class="row">
+                    <div class="col-md-6" style="margin: 20px 0px 30px 0px;">
+                        <div style="display: flex; justify-content: center;">
+                            <div class="imgbox"
+                                style="position: relative; padding: 15px; max-height: 310px; width: 100%; max-width: 450px; z-index: 0;">
+                                <a href="http://www.sharkdiver.com/san-ignacio-whale-watching"
+                                    title="Great White Shark Diving" target="_self">
+                                    <div class = "img" style="overflow: hidden;">
+                                        <img src="https://www.sharkdiver.com/wp-content/uploads/2022/04/Guadalupe-Sharks-2022.jpg"
+                                            style="width: 100%; height: 100%; -webkit-transform: scale(1.05); z-index: -1;">
+                                    </div>
+                                </a>
+    
+                                <div class="hide11"
+                                    style="background-color: rgba(29,41,66,0.5); text-align: center; position: absolute; bottom: 15px; width: calc(100% - 30px); height: 124px; display: flex; align-items: center; justify-content: center; opacity: 1.0;">
+                                    <div>
+                                        <p
+                                            style="font-size: 14px; font-weight: 800; font-family: Open Sans, Helvetica, Arial, sans-serif; text-transform: uppercase; color: white; margin: 0px;">
+                                            Guadalupe island, Mexico</p>
+                                        <p
+                                            style="font-size: 14px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: white; margin: 20px 0px 0px 0px;">
+                                            Great White Sharks</p>
+                                    </div>
+                                </div>
+                                <div class="show11"
+                                    style="display: flex; justify-content: center; position: absolute; top: 120px; left: 180px; opacity: 0.0;">
+                                    <div
+                                        style="color: black; background-color: white; font-size: 10px; font-weight: 800; border-color: white; padding: 15px;">
+                                        MORE INFO</div>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="col-md-6" style="margin: 20px 0px 30px 0px;">
+                        <div style="display: flex; justify-content: center;">
+                            <div class="imgbox"
+                                style="position: relative; padding: 15px; max-height: 310px; width: 100%; max-width: 450px; ">
+                                <a href="http://www.sharkdiver.com/san-ignacio-whale-watching"
+                                    title="Great White Shark Diving" target="_self">
+                                    <div class = "img" style = "overflow: hidden;">
+                                        <img src="https://www.sharkdiver.com/wp-content/uploads/2022/04/SIL-Gray-Whale-2022.jpg"
+                                        style="width: 100%; height: 100%;">
+                                    </div>
+                                </a>
+    
+                                <div class="hide11"
+                                    style="background-color: rgba(29,41,66,0.5); text-align: center; position: absolute; bottom: 15px; width: calc(100% - 30px); height: 124px; display: flex; align-items: center; justify-content: center; opacity: 1.0;">
+                                    <div>
+                                        <p
+                                            style="font-size: 14px; font-weight: 800; font-family: Open Sans, Helvetica, Arial, sans-serif; text-transform: uppercase; color: white; margin: 0px;">
+                                            San Ignacio Lagoon, Mexico</p>
+                                        <p
+                                            style="font-size: 14px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: white; margin: 20px 0px 0px 0px;">
+                                            Deeply-Touching Gray Whale Encounters</p>
+                                    </div>
+                                </div>
+                                <div class="show11"
+                                    style="display: flex; justify-content: center; position: absolute; top: 120px; left: 180px; opacity: 0.0;">
+                                    <div
+                                        style="color: black; background-color: white; font-size: 10px; font-weight: 800; border-color: white; padding: 15px;">
+                                        MORE INFO</div>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <!--You see us-->
+            <div style="border-top-style: solid; border-bottom-style: solid; border-width: 1px; border-color: #e6e6ff;">
+                <div class="text" style="padding-top: 50px;text-align: center; padding-bottom: 50px;">
+                    <h3
+                        style="color: #4e6278; font-size: 20px; font-weight: 800; font-family: Open Sans, Helvetica, Arial, sans-serif;">
+                        YOU'VE SEEN US ON...</h3>
+                </div>
+                <div class="row-container" style="padding-bottom: 200px;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img max-width="85" height="41"
+                                src="https://www.sharkdiver.com/wp-content/uploads/2016/02/spike.jpg"
+                                class="vc_single_image-img attachment-thumbnail" alt="" decoding="async" loading="lazy"
+                                title="spike">
+                        </div>
+                        <div class="col-md-2">
+                            <img max-width="134" height="50"
+                                src="https://www.sharkdiver.com/wp-content/uploads/2016/02/discovery_hd_us.png"
+                                class="vc_single_image-img attachment-thumbnail" alt="" decoding="async" loading="lazy"
+                                title="discovery_hd_us">
+                        </div>
+                        <div class="col-md-2">
+                            <img max-width="112" height="50"
+                                src="https://www.sharkdiver.com/wp-content/uploads/2016/02/cnn.png"
+                                class="vc_single_image-img attachment-thumbnail" alt="" decoding="async" loading="lazy"
+                                title="cnn">
+                        </div>
+                        <div class="col-md-2">
+                            <img max-width="102" height="50"
+                                src="https://www.sharkdiver.com/wp-content/uploads/2016/02/Animal_Planet_Logo.png"
+                                class="vc_single_image-img attachment-thumbnail" alt="" decoding="async" loading="lazy"
+                                title="Animal_Planet_Logo">
+                        </div>
+                        <div class="col-md-2">
+                            <img max-width="85" height="34"
+                                src="https://www.sharkdiver.com/wp-content/uploads/2016/02/gra-sharkweekpromo.jpg"
+                                class="vc_single_image-img attachment-thumbnail" alt="" decoding="async" loading="lazy"
+                                title="gra-sharkweekpromo">
+                        </div>
+                        <div class="col-md-2">
+                            <img max-width="85" height="41"
+                                src="https://www.sharkdiver.com/wp-content/uploads/2016/02/wsj.jpg"
+                                class="vc_single_image-img attachment-thumbnail" alt="" decoding="async" loading="lazy"
+                                title="wsj">
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+    
+            <div style="padding-top: 50px; padding-bottom: 40px;">
+                <div class="text" style="text-align: center;">
+                    <h3
+                        style="margin-bottom: 0px; font-style: normal; color: #4e6278; font-size: 32px; font-weight: 800; font-family: Open Sans, Helvetica, Arial, sans-serif; letter-spacing: .05em; line-height: 1.2; ">
+                        CONVERSATION SHARK DIVING</h3>
+                    <div style="display: flex; justify-content: center; height: 10px; margin: 0px;">
+                        <hr style="size: 2px; max-width: 60px; width: 100%; margin-top: 10px; ">
+                    </div>
+                </div>
+                <div class="text" style="text-align: center; text-transform: uppercase; padding-top: 20px;">
+                    <p
+                        style="color: #4e6278;  font-size: 14px; font-family: Open Sans, Helvetica, Arial, sans-serif; letter-spacing: .3em; font-weight: 600;">
+                        Welcome to Shark diver</p>
+                </div>
+            </div>
+    
+            <div class="row-container">
+                <div class="row" style="padding-top: 50px; padding-bottom: 50px;">
+                    <div class="col-md-6" style="display: block;">
+                        <p class="p1">
+                            Experience your own “Real Shark Week”, go shark diving and find out what it is like to come face
+                            to face with the Oceans most feared predators. When it comes to shark conservation efforts and
+                            shark diving industry lead protocols for ‘safe and sane shark diving,’ Shark Diver has been at
+                            the forefront of this growing shark cage diving industry trend. Over the past 20 years,
+                            commercial shark diving has grown and matured to offer the very best of safe and remarkable
+                            shark encounters worldwide.
+                        </p>
+                        <p class="p1">
+                            Today, shark diving fans can encounter many of the premier shark species at well-seasoned
+                            destinations. Shark Diver was the first commercial shark diving company in the USA to initiate,
+                            develop and support Mexican shark research efforts with Great White Sharks at Guadalupe Island.
+                            Since then we have gone on to initiate strong global shark conservation programs like The
+                            Shark-Free Marinas Initiative. Shark Diver is also a strong supporter of the <span
+                                style="color: #36a3eb;">Marine Conservation</span> <span style="color: #36a3eb;">Science
+                                Institute</span>, with a portion of our proceeds being donated to their <span
+                                style="color: #36a3eb;">Great White Shark photo</span> ID project.
+                        </p>
+                    </div>
+                    <div class="col-md-6" style="display: block;">
+                        <p class="p1">The goals for us here at Shark Diver are to be advocates for our sharks and our cage
+                            diving industry while delivering top shark species encounters to our divers, media outlets, and
+                            research partners.</p>
+                        <p class="p1">We call it Conservation Shark Diving.</p>
+                        <p class="p1">Divers and non-divers alike are the heart of Conservation Shark Diving. They are folks
+                            like you, who love sharks and who care about the future of these magnificent animals – YOU are
+                            Shark Diver.</p>
+                        <p class="p1">Join us this year on board any of our hand selected shark diving vessels to meet huge
+                            great white sharks (Carcharodon carcharias) at the volcanic island of Isla Guadalupe, or the
+                            playful and curious gray whales (Eschrichtius robustus) at the UNESCO World Heritage Site of San
+                            Ignacio Lagoon.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div style="border-top-style: solid; border-bottom-style: solid; border-width: 1px; border-color: lightgrey;">
+                <div style="padding: 40px;">
+                    <div style="width: 100%; height: 650px;"></div>
+                </div>
+            </div>
+    
+            <div class="row-container" style="padding-top: 50px; padding-bottom: 50px;">
+                <div class="row">
+                    <div class="col-md-4" style="display: block;">
+                        <p class="p1">Travelers today are seeking adventures that deliver the extraordinary. Our
+                            all-inclusive pricing, record for shark diving safety, and valuable reputation make these shark
+                            encounters “once in a lifetime adventures!”</p>
+                        <p class="p1">
+                            In a recent survey shark divers were more likely to join operations that gave back to the
+                            environment in real and tangible ways. We are proud to remain industry leaders in safe shark
+                            operations, shark site preservation efforts, shark site research support, and positive media
+                            efforts for sharks. For us, these are not just tag lines. We walk the walk, and our divers and
+                            research partners respect that.
+                        </p>
+                    </div>
+                    <div class="col-md-4" style="display: block;">
+                        <p class="p1">
+                            Your vacation choices do make a difference in the places to which you travel. We’re not here for
+                            the hype, and we never operate in places where you only ‘might’ see a shark. We KNOW these
+                            creatures will be where we take you. With a name like Shark Diver and decades of experience in
+                            the industry, we are confident to say we GUARANTEE shark sightings. Yes! You read that
+                            correctly. Shark Diver guarantees shark encounters.
+                        </p>
+                        <p class="p1">
+                            This is your year; the year you will finally meet the sharks of your dreams. Your next adventure
+                            starts with an email or phone call. So, if you’re ready, let’s go shark diving!
+                        </p>
+    
+                    </div>
+                    <div class="col-md-4">
+                        <div style="display: flex; justify-content: center;">
+                            <img width="100%" height="330"
+                                src="https://www.sharkdiver.com/wp-content/uploads/2016/02/Derek-Heasly-updated-watermark-e1424449509415.png"
+                                alt="Shark diving at Guadalupe Island" style="max-width: 220px;">
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div style="border-top-style: solid; border-width: 1px; border-color: lightgrey;">
+                <div class="row-container" style="padding-top: 50px;">
+                    <div class="row">
+                        <div class="col-md-6" style="margin: 20px 0px 30px 0px; display: block; text-align: center;">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="imgbox1"
+                                    style="position: relative; max-height: 300px; width: 100%; max-width: 450px; ">
+                                    <a href="http://www.sharkdiver.com/san-ignacio-whale-watching"
+                                        title="Great White Shark Diving" target="_self">
+                                        <div class = "img" style = "overflow: hidden;">
+                                            <img src="https://www.sharkdiver.com/wp-content/uploads/2022/04/Guadalupe-Sharks-2022.jpg"
+                                            style="width: 100%; height: 100%;">
+    
+                                        </div>
+                                    </a>
+    
+                                    <div class="hide11"
+                                        style="background-color: rgba(29,41,66,0.5); text-align: center; position: absolute; bottom: 0px; width: 100%; height: 124px; display: flex; align-items: center; justify-content: center; opacity: 1.0;">
+                                        <div>
+                                            <p
+                                                style="font-size: 14px; font-weight: 800; font-family: Open Sans, Helvetica, Arial, sans-serif; text-transform: uppercase; color: white; margin: 0px;">
+                                                Guadalupe island, Mexico</p>
+                                            <p
+                                                style="font-size: 14px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: white; margin: 20px 0px 0px 0px;">
+                                                Great White Sharks</p>
+                                        </div>
+                                    </div>
+                                    <div class="show11"
+                                        style="display: flex; justify-content: center; position: absolute; top: 120px; left: 180px; opacity: 0.0;">
+                                        <div
+                                            style="color: black; background-color: white; font-size: 10px; font-weight: 800; border-color: white; padding: 15px;">
+                                            MORE INFO</div>
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+                            <div class="text" style="text-align: center; padding-top: 20px;">
+                                <p
+                                    style="font-size: 15px; font-weight: 400; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #4e6278; font-weight: bold;">
+                                    From $2,895 per person</p>
+                            </div>
+    
+                            <div class="text" style="text-align: center; padding-top: 20px; display: block;">
+                                <p
+                                    style="font-size: 15px; font-weight: 400; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #4e6278; font-weight: bold;">
+                                    July - November</p>
+                                <p
+                                    style="font-size: 15px; font-weight: 400; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #4e6278; font-weight: bold;">
+                                    6 Days, 5 Nights</p>
+                            </div>
+    
+                            <div class="text" style="text-align: center; padding-top: 0px; display: block;">
+                                <p class="p1">Thanks to Hollywood, great white sharks <i>(Carcharodon carcharias)</i> might
+                                    be the most under-appreciated and misunderstood animal in the ocean. Make no mistake,
+                                    getting in the water with these white sharks is deeply emotional, scary, peaceful,
+                                    exhilarating, awe-inspiring and much more.</p>
+                            </div>
+    
+                            <button class="reqbtn"
+                                style="color: white;  border-radius: 3px; text-align: center; font-size: 13px; font-weight: 500; border-style: none ; width: 126px; height: 34px;">REQUEST
+                                INFO</button>
+    
+                        </div>
+                        <div class="col-md-6" style="margin: 20px 0px 30px 0px; display: block; text-align: center;">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="imgbox1"
+                                    style="max-height: 300px; width: 100%; max-width: 450px; position: relative;">
+                                    <a href="http://www.sharkdiver.com/san-ignacio-whale-watching"
+                                        title="Great Whale Adventure" target="_self">
+                                        <div class = "img" style = "overflow: hidden;">
+                                            <img src="https://www.sharkdiver.com/wp-content/uploads/2022/04/SIL-Gray-Whale-2022.jpg"
+                                            style="width: 100%; height: 100%;">
+                                        </div>
+                                    </a>
+                                    <div class="hide11"
+                                        style="background-color: rgba(29,41,66,0.5); text-align: center; position: absolute; bottom: 0px; width: 100%; height: 124px; display: flex; align-items: center; justify-content: center; opacity: 1.0;">
+                                        <div>
+                                            <p
+                                                style="font-size: 14px; font-weight: 800; font-family: Open Sans, Helvetica, Arial, sans-serif; text-transform: uppercase; color: white; margin: 0px;">
+                                                San Ignacio Lagoon, Mexico</p>
+                                            <p
+                                                style="font-size: 14px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: white; margin: 20px 0px 0px 0px;">
+                                                Deeply-Touching Gray Whale Encounters</p>
+                                        </div>
+                                    </div>
+                                    <div class="show11"
+                                        style="display: flex; justify-content: center; position: absolute; top: 120px; left: 180px; opacity: 0.0;">
+                                        <div
+                                            style="color: black; background-color: white; font-size: 10px; font-weight: 800; border-color: white; padding: 15px;">
+                                            MORE INFO</div>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <div class="text" style="text-align: center; padding-top: 20px;">
+                                <p
+                                    style="font-size: 15px; font-weight: 400; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #4e6278; font-weight: bold;">
+                                    From $1,895 per person</p>
+                            </div>
+    
+                            <div class="text" style="text-align: center; padding-top: 20px; display: block;">
+                                <p
+                                    style="font-size: 15px; font-weight: 400; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #4e6278; font-weight: bold; margin-bottom: 5px;">
+                                    Mid - January - Mid-April</p>
+                                <p
+                                    style="font-size: 15px; font-weight: 400; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #4e6278; font-weight: bold;">
+                                    4 Days, 3 Nights</p>
+                            </div>
+    
+                            <div class="text" style="text-align: center; padding-top: 0px; display: block;">
+                                <p class="p1">Baja is the only place in the world where gray whales <i>(Eschrichtius
+                                        robustus)</i> swim up to pangas to be stroked, petted, kissed, and even hugged. It’s
+                                    incredible. Interaction is entirely on the whales’ terms, with mama whales even pushing
+                                    their calves against the side of the boats to be stroked. Nobody should miss out on this
+                                    experience.</p>
+                            </div>
+    
+                            <button class="reqbtn"
+                                style="color: white; border-radius: 3px; text-align: center; font-size: 13px; font-weight: 500; border-style: none ; width: 100%; max-width: 126px; height: 34px;">REQUEST
+                                INFO</button>
+    
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!--Carousel-->
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval = "300" style = "padding-top: 60px;  text-align:  center;">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="d-block w-100">
+                        <div style="color: #919daa; font-size: 24px; font-weight: 200; line-height: 1.5; font-style: italic;">
+                            <i class="fa fa-quote-left" style="color:#4e6278; "></i>Best time ever! Absolute dream to dive with white sharks and I fulfilled it. Everybody involved was wonderful. It was an experience of a lifetime.<i class="fa fa-quote-right" style="color:#4e6278"></i>
+                        </div>
+                        <div style="padding-top: 15px;">
+                            <p style="color: black; font-size: 20px; font-weight: 900; display: inline;">
+                                Mark,London,
+                            </p>
+                            <p style="color: black; font-size: 20px; font-weight: 200; display: inline;">
+                                England
+                            </p>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-block w-100">
+                        <div style="color: #919daa; font-size: 24px; font-weight: 200; line-height: 1.5; font-style: italic;">
+                            <i class="fa fa-quote-left" style="color:#4e6278; "></i>A surreal experience that will take your breath away, even with a regulator!<i class="fa fa-quote-right" style="color:#4e6278"></i>
+                        </div>
+                        <div style="padding-top: 15px;">
+                            <p style="color: black; font-size: 20px; font-weight: 900; display: inline;">
+                                Roy,Long Island,
+                            </p>
+                            <p style="color: black; font-size: 20px; font-weight: 200; display: inline;">
+                                NY
+                            </p>
+                        </div>
+                    </div>
+                  </div>
+    
+                  <div class="carousel-item">
+                    <div class="d-block w-100">
+                        <div style="color: #919daa; font-size: 24px; font-weight: 200; line-height: 1.5; font-style: italic;">
+                            <i class="fa fa-quote-left" style="color:#4e6278; "></i>Trip was amazing. Much better than I could ever
+                            have imagined. I recommend it to everybody.<i class="fa fa-quote-right" style="color:#4e6278"></i>
+                        </div>
+                        <div style="padding-top: 15px;">
+                            <p style="color: black; font-size: 20px; font-weight: 900; display: inline;">
+                                Daniel,
+                            </p>
+                            <p style="color: black; font-size: 20px; font-weight: 200; display: inline;">
+                                Poland
+                            </p>
+                        </div>
+                    </div>
+                  </div>
+    
+                  <div class="carousel-item">
+                    <div class="d-block w-100">
+                        <div style="color: #919daa; font-size: 24px; font-weight: 200; line-height: 1.5; font-style: italic;">
+                            <i class="fa fa-quote-left" style="color:#4e6278; "></i>Shark Diver is the best. Everyone is so friendly, accommodating, and passionate about the sharks. Trip #4 is booked!<i class="fa fa-quote-right" style="color:#4e6278"></i>
+                        </div>
+                        <div style="padding-top: 15px;">
+                            <p style="color: black; font-size: 20px; font-weight: 900; display: inline;">
+                                Mel,Vancouver, British Columbia,
+                            </p>
+                            <p style="color: black; font-size: 20px; font-weight: 200; display: inline;">
+                                Canada
+                            </p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+            <!--------------------------------------->
+            
+    
+                <div style="padding-top: 15px; padding-bottom: 60px; display: flex; justify-content: center;">
+                    <div>
+                        <div
+                            style="width: 100%; max-width: 146px; height: 64px; background-color: #34e0a1; display: flex; align-items: center ;justify-content: center;">
+                            <div>
+                                <p
+                                    style="font-family: Verdana,Bitstream Vera Sans,Arial,Helvetica,sans-serif; font-size: 13px; font-weight: 800; text-align: center; margin-top: 10px; margin-bottom: 5px;">
+                                    RECOMMEND ON</p>
+                                <p style="font-size: 11px; font-weight: 700; text-align: center; ">Tripadvisor</p>
+                            </div>
+                        </div>
+                        <div
+                            style="width: 100%; max-width: 146px; height: 24px; border-color: #34e0a1; border-style: solid; border-width: 1px; background-color: white; display: flex; align-items: center; justify-content: center;">
+                            <div>
+                                <p
+                                    style="font-size: 11px; font-weight: 700; text-align: center; margin-bottom: 5px; text-decoration: underline;">
+                                    Shark Diver</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            
+    
+            <div class="row-container" style="padding-bottom: 60px;">
+                <div class="row">
+                    <button class="btn1"
+                        style="color: white;   text-align: center; font-size: 13px; font-weight: 500; border-style: none ; width: 100%; height: 40px; ">READ
+                        MORE REVIEWS</button>
+                </div>
+    
+            </div>
+        </div>
+
+
+
+
+        <!----------------------------------------->
+
+        <!---Menu-->
+        <div  class = "container-fluid" style = "width: 300px; height: 100%; padding: 0px; margin: 0px; position: fixed; top: 0px; right: 0px; z-index: 0; pointer-events: all;">
+            <div>
+                <div style="width: 100%; height: 80px; background-color: black; position: relative; padding-left: 20px;">
+                    <div style="text-align: left end; position: absolute; bottom: 0px; display: flex; width: 100%;">
+                         <p id = "menuname" style="color: white; font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 800;">MENU</p>
+                         <div style="width: 100%; text-align: right; margin-right: 40px;">
+                            <button id = "closebtn" type="button" class="btn-close btn-close-white" style="visibility: hidden;" onclick="hidemenus()"></button>
+                         </div>
+                    </div>
+                </div>
+                <div id="menu" style="width: 100%; height: 100%; background-color: white; ">
+                    <div class="list-group list-group-flush">
+                        <a class="list-group-item list-group-item-action">Shark Diver Home</a>
+                        <a class="list-group-item list-group-item-action"  style="display: inline-flex;" onclick="show_aboutmenu()">About
+                            <div style="width: 100%; text-align: right;">
+                                <img src="icons/chevron-right.svg"
+                                    style="width: 18px; height: 18px; filter: invert(0.6);">
+                            </div>    
+                        </a>
+                        <a class="list-group-item list-group-item-action"  style="display: inline-flex;" onclick="show_aboutadven()">Adventures
+                            <div style="width: 100%; text-align: right;">
+                                <img src="icons/chevron-right.svg"
+                                    style="width: 18px; height: 18px; filter: invert(0.6);">
+                            </div>
+                        </a>
+                        <a class="list-group-item list-group-item-action" style="display: inline-flex;" onclick="show_aboutmedia()">Media   
+                            <div style="width: 100%; text-align: right;">
+                                <img src="icons/chevron-right.svg"
+                                    style="width: 18px; height: 18px; filter: invert(0.6);">
+                            </div>
+                        </a>
+                        <a class="list-group-item list-group-item-action">Blog</a>
+                        <a class="list-group-item list-group-item-action">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-------------------------------->
+           
+         
+    </div>
+
+    <div id = "about" style = "width: 300px; height: 100%; padding: 0px; margin: 0px; position: fixed; top: 80px; right: -300px;">
+        
+        <div  style="width: 100%; height: 100%; background-color: white; ">
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action">Our Company</a>
+                <a class="list-group-item list-group-item-action">Shark Conversation</a>
+                <a class="list-group-item list-group-item-action">Reviews</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id = "adven" style = "width: 300px; height: 100%; padding: 0px; margin: 0px; position: fixed; top: 80px; right: -300px;">
+        
+        <div  style="width: 100%; height: 100%; background-color: white; ">
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action">Our Company</a>
+                <a class="list-group-item list-group-item-action">Shark Conversation</a>
+                <a class="list-group-item list-group-item-action">Reviews</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id = "media" style = "width: 300px; height: 100%; padding: 0px; margin: 0px; position: fixed; top: 80px; right: -300px;">
+        
+        <div  style="width: 100%; height: 100%; background-color: white; ">
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action">Our Company</a>
+                <a class="list-group-item list-group-item-action">Shark Conversation</a>
+                <a class="list-group-item list-group-item-action">Reviews</a>
+            </div>
+        </div>
+
+    </div>
+
+    
+      <!--TopButton-->
+      <div id = "btn_top" class = "btn_top_show" style = "background-image: url(icons/chevron-up.svg);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 20px;
+                    height: 20px;" onclick="topFunction()">
+                    
+      </div>
+      <!------------>
+
+</body>
+<script>
+    var flag = true;
+    var menu = "";
+
+    function transform_content(event){
+        event.stopPropagation();
+        document.getElementById("navbar-button").style.border = "none";
+        document. getElementById("content"). style. transition=" all 0.2s";
+        if(flag == true){
+            document. getElementById("content"). style. transform="translateX(-300px)";
+            topFunction();
+            document.getElementById("body").style.overflow = "hidden";
+            flag = false;
+        }
+        else{
+        document. getElementById("content"). style. transform="translateX(0px)";
+        document.getElementById("body").style.overflow = "scroll";
+        flag = true;
+        }
+    }
+
+    function showContent(){
+        document. getElementById("content"). style. transform="translateX(0px)";
+        document.getElementById("body").style.overflow = "scroll";
+        flag = true;
+    }
+
+    let mybutton = document.getElementById("btn_top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+         if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+              mybutton.style.visibility = "visible";
+              mybutton.className = "btn_top_show";
+        } else {
+          mybutton.style.visibility = "hidden";
+          mybutton.className = "";
+         }
+    }
+
+    function show_aboutmenu(){
+        document. getElementById("menu"). style. transition=" all 0.8s";
+        document. getElementById("menu"). style. transform="translateX(-300px)";
+        document. getElementById("about"). style. transition=" all 0.8s";
+        document. getElementById("about"). style. transform="translateX(-300px)";
+        document.getElementById("menuname").innerText = "ABOUT";
+        document.getElementById("closebtn").style.visibility = "visible";
+        menu = "about";
+    }
+
+    function show_aboutadven(){
+        document. getElementById("menu"). style. transition=" all 0.8s";
+        document. getElementById("menu"). style. transform="translateX(-300px)";
+        document. getElementById("adven"). style. transition=" all 0.8s";
+        document. getElementById("adven"). style. transform="translateX(-300px)";
+        document.getElementById("menuname").innerText = "ADVENTURES";
+        document.getElementById("closebtn").style.visibility = "visible";
+        menu = "adven";
+    }
+
+    function show_aboutmedia(){
+        document. getElementById("menu"). style. transition=" all 0.8s";
+        document. getElementById("menu"). style. transform="translateX(-300px)";
+        document. getElementById("media"). style. transition=" all 0.8s";
+        document. getElementById("media"). style. transform="translateX(-300px)";
+        document.getElementById("menuname").innerText = "MEDIA";
+        document.getElementById("closebtn").style.visibility = "visible";
+        menu = "media";
+    }
+
+    function hidemenus(){
+         document.getElementById("menuname").innerText = "MENU";
+        document.getElementById("closebtn").style.visibility = "hidden";
+        document. getElementById("menu"). style. transition=" all 0.8s";
+        document. getElementById("menu"). style. transform="translateX(0px)";
+        document. getElementById(menu). style. transition=" all 0.8s";
+        document. getElementById(menu). style. transform="translateX(0px)";
+    }
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+</script>
+</html>
